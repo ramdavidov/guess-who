@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guess Me | Rami</title>
+  <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="box">
+    <img class="game-logo" src="img/layout/guesswho.png" />
+  </header>
+  <main>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="game-start mt-5">
+      <h2 class="think-title">Think of Someone...</h2>
+      <button onclick="onStartGuessing()" class="start-guessing btn btn-lg btn-primary mt-5">I'm Ready!</button>
+    </section>
+    <section class="quest mt-5" style="display: none">
+      <h2 class="quest-txt"></h2>
+      <button onclick="onUserResponse('yes')" class="yes-no-btns btn btn-primary ml-10 mt-3"">Yes</button>
+      <button onclick="onUserResponse('no')" class="yes-no-btns btn btn-danger ml-1 mt-3"">No</button>
+    </section>
+    <section class="new-quest mt-5" style="display: none">
+      <h2>OK, I gave up...</h2>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="newGuess" class="col-sm-8 control-label">You thought of: </label>
+          <div class="col-sm-12">
+            <input name="newGuess" type="txt" class="newGuess form-control" id="newGuess" placeholder="Your Guess"
+              required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="newQuest" class="col-sm-12 control-label">Question to differentiate</label>
+          <div class="col-sm-12">
+            <input name="newQuest" type="txt" class="newQuest form-control" id="newQuest"
+              placeholder="Describe your guess" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" onclick="onAddGuess();return false;" class="btn btn-primary">
+              Make me Smarter!
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    cofferight &copy; 2016
+  </footer>
+
+  <script src="lib/jquery/jquery.js"></script>
+  <script src="lib/bootstrap/bootstrap.js"></script>
+  <script src="js/storage-service.js"></script>
+  <script src="js/quest-service.js"></script>
+  <script src="js/quest-controller.js"></script>
+
+</body>
+
+</html>
